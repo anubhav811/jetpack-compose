@@ -23,9 +23,14 @@ class MainActivity : ComponentActivity() {
                     .fillMaxHeight(0.5f)
                     .background(Color.Green)
                     .fillMaxWidth()
-                    .padding(60.dp)
+                    .border(6.dp,Color.Red, RectangleShape)
             ){
-                Text("Hello",modifier=Modifier.offset(50.dp))
+
+                // offset is similar to margin however it doesn't pushes the neighbouring
+                // elements , instead it may overlap them
+
+                Text("Hello")
+                Spacer(modifier = Modifier.height(50.dp))
                 Text("World")
             }
         }
