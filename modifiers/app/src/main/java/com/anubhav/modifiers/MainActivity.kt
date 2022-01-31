@@ -1,10 +1,12 @@
 package com.anubhav.modifiers
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
 import androidx.compose.ui.Modifier
@@ -42,7 +44,10 @@ class MainActivity : ComponentActivity() {
                     .border(5.dp,Color.Yellow)
                     .padding(50.dp)
                     .border(2.dp,Color.Magenta, RectangleShape)
-                    .padding(100.dp))
+                    .padding(100.dp)
+                    .clickable {
+                        Log.d("asd","Text tapped")
+                    })
                 Spacer(modifier = Modifier.height(50.dp))
                 Text("World")
             }
