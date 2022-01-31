@@ -17,19 +17,32 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+
         // Modifiers are basically used to modify properties of any composable
             Column(
+                // IMPORTANT these functions below are applied sequentially
+                // diff order of functions can result to diff results
+
                 modifier = Modifier
                     .fillMaxHeight(0.5f)
                     .background(Color.Green)
                     .fillMaxWidth()
-                    .border(6.dp,Color.Red, RectangleShape)
+                    .border(3.dp,Color.Red, RectangleShape)
+                    .padding(5.dp)
+                    .border(3.dp,Color.Black, RectangleShape)
+                    .padding(5.dp)
+                    .border(3.dp,Color.Blue,RectangleShape)
+                    .padding(10.dp)
             ){
 
                 // offset is similar to margin however it doesn't pushes the neighbouring
                 // elements , instead it may overlap them
 
-                Text("Hello")
+                Text("Hello",modifier = Modifier
+                    .border(5.dp,Color.Yellow)
+                    .padding(50.dp)
+                    .border(2.dp,Color.Magenta, RectangleShape)
+                    .padding(100.dp))
                 Spacer(modifier = Modifier.height(50.dp))
                 Text("World")
             }
